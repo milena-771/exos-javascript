@@ -22,8 +22,8 @@ for(let i = 0; i<numbers.length;i++){
 console.log(`Nombres pairs: ${countEven}, nombres impairs: ${countOdd}`);
 
 //Tiroir 2
-let evens = [];
-let odds = [];
+const evens = [];
+const odds = [];
 let tmp = 0;
 
 for (let i =0; i<numbers.length; i++){
@@ -57,13 +57,7 @@ for (let i = 0; i<numbers.length; i++){
     }
 }
 
-if (evensBis.length != 0 && oddsBis.length !=0){
-    console.log(`Nombres pairs : ${evensBis} (${evensBis.length}, le plus grand est ${maxEven})`);
-    console.log(`Nombres impairs : ${oddsBis} (${oddsBis.length}, le plus grand est ${maxOdd})`);   
-} else if (evensBis.length == 0){
-    console.log(`Nombres pairs : ${evensBis} (${evensBis.length}, pas de plus grand)`);
-    console.log(`Nombres impairs : ${oddsBis} (${oddsBis.length}, le plus grand est ${maxOdd})`);
-} else if (oddsBis.length == 0){
-    console.log(`Nombres pairs : ${evensBis} (${evensBis.length}, le plus grand est ${maxEven})`);
-    console.log(`Nombres impairs : ${oddsBis} (${oddsBis.length}, pas de plus grand)`);
-}
+
+const output = `Evens ${evensBis} (${evensBis.length}, max = ${maxEven}), 
+    Odds ${oddsBis} (${oddsBis.length}, max = ${maxOdd}) `;
+console.log(output);

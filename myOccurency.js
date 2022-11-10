@@ -13,35 +13,30 @@ for (let i = 0; i < array.length; i++){
 
 let count = 0;
 let tmp = 0;
-let suite = true;
-let random = false;
+let occurencySuite = 0;
+let occurencyRandom = 0;
 
 for (let i = 0; i<numbers.length; i++){
     tmp = numbers[i];
-    count++;
 
     for(let j = 1; j<numbers.length; j++){
         if (tmp == numbers[j]){
             tmp = numbers[j];
             count++;
             if(tmp == numbers[j-1] && tmp == numbers[j++]){
-                suite == true;
+                occurencySuite = tmp;
                 break;
+            }else if(count >=3){
+                occurencyRandom = tmp;
             }
         }
     }
-    if (count >=3){
-        random == true;
-        break;
-    }else{
-        count = 0;
-    }
 }
 
-if(random == true){
-    console.log(`Le nombre ${tmp} apparaît 3 fois`);
-} else if (suite == true){
-    console.log(`Le nombre ${tmp} apparaît 3 fois de suite`);
+if(occurencySuite != 0){
+    console.log(`Le nombre ${occurencySuite} apparaît 3 fois de suite`);
+} else if (occurencyRandom != 0){
+    console.log(`Le nombre ${occurencyRandom} apparaît 3 fois `);
 }else{
     console.log(`Aucun nombre n'apparaît 3 fois`);
 }
